@@ -232,7 +232,7 @@ impl CellVertexEstimate {
             let p = edge_crossings[i].crossing;
             let normal = central_gradient(&sdf, p, 0.0001).normalize();
             let rel_p = Point3::from(p - centroid);
-            qef += Qef3::probabilistic_plane(rel_p, normal, 0.01, 0.01);
+            qef += Qef3::probabilistic_plane(rel_p.coords, normal, 0.01, 0.01);
             // qef += Qef3::plane(rel_p, normal);
         }
 

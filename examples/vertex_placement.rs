@@ -32,7 +32,7 @@ fn setup(
     let (origins, normals) = two_plane_system(Vector3::zeros());
     let mut qef = Qef3::zeros();
     for (p, n) in origins.into_iter().zip(normals) {
-        qef += Qef3::plane(p, n);
+        qef += Qef3::plane(p.coords, n);
         // qef += Qef3::probabilistic_plane(p, n, 0.1, 0.1);
     }
     // let intersection = qef.minimizer_with_exact_inverse();
@@ -51,7 +51,7 @@ fn setup(
     let (origins, normals) = three_plane_system(Vector3::new(7.0, 0.0, 0.0));
     let mut qef = Qef3::zeros();
     for (p, n) in origins.into_iter().zip(normals) {
-        qef += Qef3::plane(p, n);
+        qef += Qef3::plane(p.coords, n);
         // qef += Qef3::probabilistic_plane(p, n, 0.1, 0.1);
     }
     // let intersection = qef.minimizer_with_exact_inverse();
@@ -70,7 +70,7 @@ fn setup(
     let (origins, normals) = four_plane_system(Vector3::new(14.0, 0.0, 0.0));
     let mut qef = Qef3::zeros();
     for (p, n) in origins.into_iter().zip(normals) {
-        qef += Qef3::plane(p, n);
+        qef += Qef3::plane(p.coords, n);
         // qef += Qef3::probabilistic_plane(p, n, 0.1, 0.1);
     }
     // let intersection = qef.minimizer_with_exact_inverse();

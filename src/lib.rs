@@ -1,3 +1,7 @@
+//! 3D quadratic error function minimizers using `nalgebra`.
+//!
+//! ![Examples](https://raw.githubusercontent.com/bonsairobo/qef/main/assets/planes_example.png)
+
 use nalgebra::{Matrix3, RealField, Vector3, Vector6};
 use std::ops::{Add, AddAssign};
 
